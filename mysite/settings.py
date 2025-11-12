@@ -4,7 +4,6 @@ Django settings for mysite project (Render-ready version).
 
 import os
 from pathlib import Path
-import dj_database_url  # Asegúrate de instalarlo: pip install dj-database-url
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -59,7 +58,10 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 # Database (usar PostgreSQL en Render, SQLite solo para desarrollo)
 DATABASES = {
-    "default": dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
 # Password validation
