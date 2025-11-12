@@ -11,7 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-default")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
+ALLOWED_HOSTS = [
+    "https://djangotutorial-w8u3.onrender.com/",
+    "djangotutorial-w8u3.onrender.com",
+]
+#os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
 
 # Application definition
 INSTALLED_APPS = [
