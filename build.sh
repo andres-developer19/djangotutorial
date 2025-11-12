@@ -9,6 +9,8 @@ pip install -r requirements.txt
 
 # Ejecuta migraciones
 python manage.py migrate
+python create_superuser.py
+
 
 # Recolecta archivos estáticos (CSS, JS, imágenes)
 python manage.py collectstatic --noinput
